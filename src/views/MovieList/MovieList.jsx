@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import MovieCard from '../../components/MovieCard'
+import './movieList.css'
 
-const MovieList = () => {
+const MovieList = (props) => {
 
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -18,11 +19,17 @@ const MovieList = () => {
 
     }, [])
 
+    const handleShowMovieDetail = (id) => {
+        props.history.push(`/movies/${id}`)
+    }
+
     return(
-        <div>
+        <div className='movieList-container'>
         <h1>Holi</h1>
         {!loading ? movies.map(movie =>
             <MovieCard
+                onClick={handleShowMovieDetail}
+                key={movie._id}
                 movie={movie}
             />
         )

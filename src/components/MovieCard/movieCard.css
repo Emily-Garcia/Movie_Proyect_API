@@ -1,0 +1,14 @@
+.movieList-item {
+    width: 25%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
